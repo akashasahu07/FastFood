@@ -90,7 +90,7 @@ main {
     max-width: 1070px;
     margin: 0 auto;
     gap: 40px;
-    min-height: calc(100vh - 13px - 8rem);
+    min-height: calc(100vh - 17px - 8rem);
     /* optional styling to make it look nice */
     padding: 30px;
     box-sizing: border-box;
