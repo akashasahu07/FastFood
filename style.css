@@ -1,0 +1,284 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c1bfbf;
+}
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d004e;
+    padding: 15px 50px;
+    font-family: sans-serif;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.navbar h3 {
+    color: white;
+    font-size: 24px;
+}
+
+/* Nav Links */
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav li {
+    position: relative;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    transition: background 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.nav a:hover {
+    background-color: #930303;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 1;
+    background-color: #ff6666;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-menu {
+    display: flex;
+    background-color: #0a038a;
+}
+
+/* Main Section */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    max-width: 1070px;
+    margin: 0 auto;
+    gap: 40px;
+    min-height: calc(100vh - 13px - 8rem);
+    /* optional styling to make it look nice */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Left Content (e.g., Text) */
+.content {
+    flex: 1 1 200px;
+    /* Grow/shrink, base width */
+}
+
+/* Right Section (Image Container) */
+.image {
+    flex: 1 1 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image figure {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.image figure img {
+    width: 100%;
+    object-fit: contain;
+    mix-blend-mode: color-burn;
+    animation: rotateImage 15s linear infinite;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+/* Heading */
+.content h1 {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+/* Subheading */
+.content p {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+    color: #e4514e;
+}
+
+.btn {
+    display: flex;
+    column-gap: 1rem;
+}
+
+/* First Button */
+button {
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
+button:nth-last-of-type(1) {
+    border: none;
+    width: 110px;
+    height: 40px;
+    background-color: #ab01bb;
+    color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+button:nth-last-of-type(1):hover {
+    background-color: #34014c;
+    box-shadow: 0 0 30px 1px #0000003b;
+}
+
+/* Second Button */
+button:nth-last-of-type(2) {
+    border: none;
+    width: 110px;
+    height: 40px;
+    background-color: #e4514e;
+    color: white;
+    border-radius: 25px;
+    transition: 0.5s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+button:nth-last-of-type(2):hover {
+    box-shadow: 0 0 30px 1px #0000003b;
+    background-color: #01166fe2;
+}
+
+/* Additional Text */
+.content h3 {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.content h5 {
+    color: #e4514e;
+    font-size: 17px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.icon {
+    display: none;
+}
+
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #002761;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframe Animation for Rotating Image */
+@keyframes rotateImage {
+    100% {
+        transform: rotate(360deg) translate(0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        text-align: center;
+        /* Optional: center text for smaller screens */
+    }
+
+    .image,
+    .content {
+        flex: 1 1 100%;
+    }
+
+    .image figure {
+        max-width: 80%;
+    }
+
+    .nav {
+        position: fixed;
+        top: 60px;
+        right: -250px;
+        /* hidden by default */
+        flex-direction: column;
+        background-color: #3d004e;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px 0 0 10px;
+        transition: right 0.3s ease;
+        z-index: 1001;
+    }
+
+    .nav.active {
+        right: 0;
+        /* slide in */
+    }
+
+    .icon {
+        display: block;
+        font-size: 2rem;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        flex-direction: column;
+    }
+
+    .dropdown-menu li a {
+        color: #f1f1f1;
+        padding: 8px 10px;
+        font-size: 1rem;
+    }
+
+    /* Show dropdown when parent is clicked (mobile) */
+    .dropdown.active .dropdown-menu {
+        display: flex;
+    }
+}
